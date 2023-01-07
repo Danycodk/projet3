@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/*-------------$variables$-----------------------*/
+/*-------------$variables$-----------------------*/
+/*-------------@mixin-----------------------*/
+/*-------------@mixin-----------------------*/
 * {
   margin: 0px;
   padding: 0px;
@@ -15,17 +19,19 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 /*-------------HEAD-----------------------*/
 /*-------------HEAD-----------------------*/
 header {
   display: flex;
-  align-items: center;
   flex-direction: column;
 }
 header .title {
   width: 100%;
   display: flex;
-  align-items: center;
   box-shadow: 0px 4px 5px -3px #626262;
   z-index: 3;
 }
@@ -70,17 +76,18 @@ article p {
   padding-top: 12px;
   padding-bottom: 30px;
   font-size: 18px;
+  color: #626262;
 }
 article button {
-  padding: 13px 13px;
   color: #ffffff;
-  margin: auto;
   font-size: 18px;
   border: none;
+  padding: 13px 13px;
   border-radius: 25px;
   background-image: linear-gradient(#FF79DA, #9356DC);
   box-shadow: 0px 4px 11px 0px #B2B2B2;
   cursor: pointer;
+  margin: auto;
 }
 article button:hover {
   filter: brightness(1.05);
@@ -89,11 +96,141 @@ article button:hover {
 
 /*-------------nav-----------------------*/
 /*-------------nav-----------------------*/
+nav {
+  padding-bottom: 50px;
+}
 nav h1 {
   width: 90%;
+  margin: auto;
   padding-top: 40px;
   padding-bottom: 20px;
+}
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+nav ul li {
+  width: 85%;
+  max-width: 360px;
   margin: auto;
+  font-weight: bold;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  background-color: #F3F3F3;
+  box-shadow: 0px 11px 17px -8px #C1BEBE;
+}
+nav ul li i:nth-child(1) {
+  color: #ffffff;
+  padding: 9px;
+  font-size: 12px;
+  margin-left: -2%;
+  border-radius: 50%;
+  background-color: #9356DC;
+}
+nav ul li i:nth-child(2) {
+  color: #626262;
+  padding: 0 15px;
+}
+
+/*-------------section-----------------------*/
+/*-------------section-----------------------*/
+section {
+  padding-bottom: 50px;
+  background-color: #F3F3F3;
+}
+section h1 {
+  width: 90%;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 15px;
+}
+section div figure {
+  width: 90%;
+  height: 260px;
+  margin: auto;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 10px 20px -14px #000000;
+}
+section div figure .news {
+  width: 88%;
+  display: flex;
+  margin: auto;
+  margin-top: 13px;
+  justify-content: flex-end;
+  position: absolute;
+}
+section div figure .news p {
+  padding: 6px 9px;
+  background-color: #99E2D0;
+}
+section div figure img {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+section div figure figcaption {
+  width: 90%;
+  margin: auto;
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section div figure figcaption div h3 {
+  padding-bottom: 5px;
+}
+section div figure figcaption .coueur {
+  width: 10%;
+  position: relative;
+}
+section div figure figcaption .coueur .fa-heart {
+  position: absolute;
+  font-size: 25px;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  font-size: 25px;
+}
+section div figure figcaption .coueur .fa-solid {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 1s;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+section div figure figcaption .coueur .fa-solid:hover {
+  opacity: 1;
+}
+
+/*-------------footer-----------------------*/
+/*-------------footer-----------------------*/
+footer {
+  color: #ffffff;
+  background-color: #383636;
+}
+footer div {
+  width: 90%;
+  margin: auto;
+  padding-top: 20px;
+}
+footer div h1 {
+  font-size: 17px;
+  padding-bottom: 15px;
+  font-family: "Shrikhand", sans-serif;
+}
+footer div h3 {
+  font-size: 16px;
+  padding-bottom: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
