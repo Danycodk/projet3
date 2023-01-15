@@ -50,6 +50,19 @@ $vert: #99E2D0;
     background-clip: text;
     -webkit-background-clip: text;
 }
+/*-------------Animation-----------------------*/
+/*-------------Animation-----------------------*/
+
+/*-------------Responsive-----------------------*/
+/*-------------Responsive-----------------------*/
+$tablette: "screen and (min-width: 768px) ";      /* #{$tablette} */
+$desktop: "screen and (min-width: 992px) ";
+
+@for $i from 1 through 9 {
+    section .menu_box:nth-child( #{$i}){
+        animation-delay: ($i * 100ms) ;
+    }
+}
 *{
     margin: 0px;
     padding: 0px;
@@ -57,7 +70,6 @@ $vert: #99E2D0;
 }
 body{
     font-family: 'Roboto', sans-serif;
-    
 }
 a{
     color: inherit;
@@ -71,7 +83,7 @@ ul {
 /*-------------HEAD-----------------------*/
 header{
     width:95%;
-    margin: auto;
+    margin: auto ;
     @include align-center ;
     h1{
         width: 95%;
@@ -117,7 +129,6 @@ section{
         div{
             @include align-center ;
             position: relative;
-           
             height: 50px;
             width: 50px;
             .fa-heart{
@@ -136,7 +147,7 @@ section{
         width: 95%;
         margin: auto;
         font-size: 16px;
-        padding-top: 50px ;
+        padding-top: 10px ;
         padding-bottom: 10px;
         &:after{
             content: "";
@@ -147,27 +158,87 @@ section{
             background-color: $vert;
         }
     }
-    .menu_box{
-        width: 90%;
-        max-width: 500px;
-        margin: auto;
-        display: flex;
-        padding: 10px 0;
-        background-color: #ffffff;
-        .whithout_hover{
-            width: 90%;
-            display: flex;
-            flex-wrap: wrap;
-            padding: 10px 0;
-            h3{
-                width: 100%;
-            }
-            p{
-                width: 50%;
-            }
+    @keyframes menu_down_up {
+        0%{
+            opacity: 0 ;
+            transform: translateY(-30px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0px)
         }
     }
-    div{
+    .menu_box{
+        width: 90%;
+        height: 60px;
+        background-color:#ffffff ;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 20px;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px; 
+        box-shadow: 0px 10px 20px -14px #000000;
+        animation: menu_down_up 3s;
+        &:hover .description_prize{
+            & p:nth-child(2){
+                margin-right: 70px;
+            }
+        }
+        &:hover i{
+            right:  0 ;
+            visibility: visible;
+            }
+        h3{
+            text-align: left;
+            width: 98%;
+            padding-top: 10px;
+            overflow:hidden;
+            white-space:nowrap;  
+            margin: auto;
+            align-items: initial;
+        }
+        .description_prize{
+            width: 98%; 
+            display: flex;
+            margin: auto;
+            justify-content: space-between;   
+            
+            & p:nth-child(1){
+                text-overflow:ellipsis;
+                overflow: hidden;
+                white-space:nowrap;  
+                padding-bottom: 5px;
+            }
+            & p:nth-child(2){
+                margin-right: 9px;
+                padding-left: 10px;
+                transition: all 2s;
+               
+            }
+        }
+        i{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 55px;
+            right: -65px;
+            position: absolute;
+            height: 60px;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: $vert;
+            border-bottom-right-radius: 15px;
+            border-top-right-radius: 15px;
+            visibility: hidden;
+            transition: all 2s;
+        }
+    }
+    .btn{
         @include justify-content( center);
         padding-top: 40px;
         button{
@@ -179,7 +250,12 @@ section{
         }
     }
 }
-
+@media #{$tablette} {
+    section{
+        margin-top:initial;
+        border-radius: 0;
+    }
+}
 
 
 

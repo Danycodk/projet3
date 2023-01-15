@@ -4,6 +4,47 @@
 /*-------------$variables$-----------------------*/
 /*-------------@mixin-----------------------*/
 /*-------------@mixin-----------------------*/
+/*-------------Animation-----------------------*/
+/*-------------Animation-----------------------*/
+/*-------------Responsive-----------------------*/
+/*-------------Responsive-----------------------*/
+/* screen and (min-width: 768px)  */
+section .menu_box:nth-child(1) {
+  animation-delay: 100ms;
+}
+
+section .menu_box:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+section .menu_box:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+section .menu_box:nth-child(4) {
+  animation-delay: 400ms;
+}
+
+section .menu_box:nth-child(5) {
+  animation-delay: 500ms;
+}
+
+section .menu_box:nth-child(6) {
+  animation-delay: 600ms;
+}
+
+section .menu_box:nth-child(7) {
+  animation-delay: 700ms;
+}
+
+section .menu_box:nth-child(8) {
+  animation-delay: 800ms;
+}
+
+section .menu_box:nth-child(9) {
+  animation-delay: 900ms;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -107,7 +148,7 @@ section h2 {
   width: 95%;
   margin: auto;
   font-size: 16px;
-  padding-top: 50px;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 section h2:after {
@@ -118,32 +159,88 @@ section h2:after {
   display: block;
   background-color: #99E2D0;
 }
+@keyframes menu_down_up {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 section .menu_box {
   width: 90%;
-  max-width: 500px;
+  height: 60px;
+  background-color: #ffffff;
   margin: auto;
   display: flex;
-  padding: 10px 0;
-  background-color: #ffffff;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 20px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0px 10px 20px -14px #000000;
+  animation: menu_down_up 3s;
 }
-section .menu_box .whithout_hover {
-  width: 90%;
+section .menu_box:hover .description_prize p:nth-child(2) {
+  margin-right: 70px;
+}
+section .menu_box:hover i {
+  right: 0;
+  visibility: visible;
+}
+section .menu_box h3 {
+  text-align: left;
+  width: 98%;
+  padding-top: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: auto;
+  align-items: initial;
+}
+section .menu_box .description_prize {
+  width: 98%;
   display: flex;
-  flex-wrap: wrap;
-  padding: 10px 0;
+  margin: auto;
+  justify-content: space-between;
 }
-section .menu_box .whithout_hover h3 {
-  width: 100%;
+section .menu_box .description_prize p:nth-child(1) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 5px;
 }
-section .menu_box .whithout_hover p {
-  width: 50%;
+section .menu_box .description_prize p:nth-child(2) {
+  margin-right: 9px;
+  padding-left: 10px;
+  transition: all 2s;
 }
-section div {
+section .menu_box i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  right: -65px;
+  position: absolute;
+  height: 60px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #99E2D0;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  visibility: hidden;
+  transition: all 2s;
+}
+section .btn {
   display: flex;
   justify-content: center;
   padding-top: 40px;
 }
-section div button {
+section .btn button {
   color: #ffffff;
   font-size: 18px;
   border: none;
@@ -153,11 +250,17 @@ section div button {
   box-shadow: 0px 4px 11px 0px #B2B2B2;
   cursor: pointer;
 }
-section div button:hover {
+section .btn button:hover {
   filter: brightness(1.05);
   box-shadow: 0px 4px 18px 0px #B2B2B2;
 }
 
+@media screen and (min-width: 768px) {
+  section {
+    margin-top: initial;
+    border-radius: 0;
+  }
+}
 /*-------------footer-----------------------*/
 /*-------------footer-----------------------*/
 footer {
