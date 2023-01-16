@@ -6,9 +6,26 @@
 /*-------------@mixin-----------------------*/
 /*-------------Animation-----------------------*/
 /*-------------Animation-----------------------*/
-/*-------------Responsive-----------------------*/
-/*-------------Responsive-----------------------*/
-/* screen and (min-width: 768px)  */
+@keyframes rotation {
+  0% {
+    transform: rotate(260deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes menu_down_up {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+/*-------------for  from through---------------------*/
+/*-------------for from through-----------------------*/
 section .menu_box:nth-child(1) {
   animation-delay: 100ms;
 }
@@ -45,6 +62,9 @@ section .menu_box:nth-child(9) {
   animation-delay: 900ms;
 }
 
+/*-------------Responsive-----------------------*/
+/*-------------Responsive-----------------------*/
+/* screen and (min-width: 768px)  */
 * {
   margin: 0px;
   padding: 0px;
@@ -159,23 +179,13 @@ section h2:after {
   display: block;
   background-color: #99E2D0;
 }
-@keyframes menu_down_up {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
 section .menu_box {
+  display: flex;
+  flex-direction: column;
   width: 90%;
   height: 60px;
   background-color: #ffffff;
   margin: auto;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   overflow: hidden;
   cursor: pointer;
@@ -193,6 +203,9 @@ section .menu_box:hover i {
   right: 0;
   visibility: visible;
 }
+section .menu_box:hover i:before {
+  transform: rotate(0);
+}
 section .menu_box h3 {
   text-align: left;
   width: 98%;
@@ -203,10 +216,10 @@ section .menu_box h3 {
   align-items: initial;
 }
 section .menu_box .description_prize {
-  width: 98%;
   display: flex;
-  margin: auto;
   justify-content: space-between;
+  width: 98%;
+  margin: auto;
 }
 section .menu_box .description_prize p:nth-child(1) {
   text-overflow: ellipsis;
@@ -234,6 +247,13 @@ section .menu_box i {
   border-top-right-radius: 15px;
   visibility: hidden;
   transition: all 2s;
+}
+section .menu_box i:before {
+  content: "\f058";
+  transform: rotate(260deg);
+  transition: all 1s;
+  transition-delay: 0.5s;
+  font-size: 30px;
 }
 section .btn {
   display: flex;

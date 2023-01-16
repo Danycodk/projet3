@@ -52,17 +52,38 @@ $vert: #99E2D0;
 }
 /*-------------Animation-----------------------*/
 /*-------------Animation-----------------------*/
+@keyframes rotation{
+    0%{
+        transform:rotate(260deg)
+    }
+    100%{
+        transform:rotate(0)
+    }
+}
+@keyframes menu_down_up {
+    0%{
+        opacity: 0 ;
+        transform: translateY(-30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+/*-------------for  from through---------------------*/
+/*-------------for from through-----------------------*/
+@for $i from 1 through 9 {
+    section .menu_box:nth-child( #{$i}){
+        animation-delay: ($i * 100ms) ;
+    }
+}
 
 /*-------------Responsive-----------------------*/
 /*-------------Responsive-----------------------*/
 $tablette: "screen and (min-width: 768px) ";      /* #{$tablette} */
 $desktop: "screen and (min-width: 992px) ";
 
-@for $i from 1 through 9 {
-    section .menu_box:nth-child( #{$i}){
-        animation-delay: ($i * 100ms) ;
-    }
-}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -158,23 +179,12 @@ section{
             background-color: $vert;
         }
     }
-    @keyframes menu_down_up {
-        0%{
-            opacity: 0 ;
-            transform: translateY(-30px);
-        }
-        100%{
-            opacity: 1;
-            transform: translateY(0px)
-        }
-    }
     .menu_box{
+        @include colum ;
         width: 90%;
         height: 60px;
         background-color:#ffffff ;
         margin: auto;
-        display: flex;
-        flex-direction: column;
         align-items: center;
         overflow: hidden;
         cursor: pointer;
@@ -192,6 +202,9 @@ section{
         &:hover i{
             right:  0 ;
             visibility: visible;
+            &:before {
+                transform:rotate(0)
+            }
             }
         h3{
             text-align: left;
@@ -203,11 +216,9 @@ section{
             align-items: initial;
         }
         .description_prize{
+            @include justify-content( space-between );
             width: 98%; 
-            display: flex;
             margin: auto;
-            justify-content: space-between;   
-            
             & p:nth-child(1){
                 text-overflow:ellipsis;
                 overflow: hidden;
@@ -222,8 +233,7 @@ section{
             }
         }
         i{
-            display: flex;
-            justify-content: center;
+            @include justify-content(center );
             align-items: center;
             width: 55px;
             right: -65px;
@@ -236,6 +246,13 @@ section{
             border-top-right-radius: 15px;
             visibility: hidden;
             transition: all 2s;
+            &:before {
+                content: "\f058";
+                transform:rotate(260deg);
+                transition: all 1s ;
+                transition-delay: 0.5s ;
+                font-size: 30px;
+            }
         }
     }
     .btn{
