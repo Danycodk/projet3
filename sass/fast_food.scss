@@ -50,6 +50,27 @@ $vert: #99E2D0;
     background-clip: text;
     -webkit-background-clip: text;
 }
+@mixin footer {
+    color: #ffffff; 
+    background-color: #383636;
+    div{
+        width: 90%;
+        margin: auto;
+        padding-top: 20px;
+        h1{
+            font-size: 17px;
+            padding-bottom: 15px;
+            font-family: 'Shrikhand', sans-serif;
+        }
+        h3{
+            font-size: 16px;
+            padding-bottom: 5px;
+            i{   /* commit 8 */
+                width: 25px;
+            }
+        }
+    }
+}
 /*-------------Animation-----------------------*/
 /*-------------Animation-----------------------*/
 @keyframes rotation{
@@ -190,8 +211,7 @@ section{
         cursor: pointer;
         position: relative;
         margin-bottom: 20px;
-        border-bottom-right-radius: 15px;
-        border-top-right-radius: 15px; 
+        border-radius: 15px;
         box-shadow: 0px 10px 20px -14px #000000;
         animation: menu_down_up 3s;
         &:hover .description_prize{
@@ -280,21 +300,5 @@ section{
 /*-------------footer-----------------------*/
 /*-------------footer-----------------------*/
 footer{
-    color: #ffffff;
-    padding-bottom: 40px;
-    background-color: #383636;
-    div{
-        width: 90%;
-        margin: auto;
-        padding-top: 20px;
-        h1{
-            font-size: 17px;
-            padding-bottom: 15px;
-            font-family: 'Shrikhand', sans-serif;
-        }
-        h3{
-            font-size: 16px;
-            padding-bottom: 5px;
-        }
-    }
+   @include footer ;
 }

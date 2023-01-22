@@ -23,25 +23,25 @@ $vert: #99E2D0;
     background-image:linear-gradient($rose,$violet) ;
 }
 @mixin btn($number,$number2){
-    color: #ffffff;
-    font-size: 18px;
     border:none;
-    padding: $number $number2;
+    font-size: 18px;
+    cursor: pointer;
+    color: #ffffff;
     border-radius: 25px;
+    padding: $number $number2;
     @include linear-gradientt;
     box-shadow: 0px 4px 11px 0px #B2B2B2  ;
-    cursor: pointer;
 }
 @mixin coueur_vide{
-    position: absolute;
-    font-size: 25px;
     top:50% ;
+    font-size: 25px;
+    position: absolute;
     cursor: pointer;
     transform: translateY(-50%);
 }
 @mixin coueur_rempli{
-    position: absolute;
     opacity: 0;
+    position: absolute;
     cursor: pointer;
     transition: all 1s;
     @include linear-gradientt;
@@ -66,6 +66,27 @@ $vert: #99E2D0;
             align-items: center;
             margin-right: 30px ;
             background-color:#ffffff; 
+        }
+    }
+}
+@mixin footer {
+    color: #ffffff; 
+    background-color: #383636;
+    div{
+        width: 90%;
+        margin: auto;
+        padding-top: 20px;
+        h1{
+            font-size: 17px;
+            padding-bottom: 15px;
+            font-family: 'Shrikhand', sans-serif;
+        }
+        h3{
+            font-size: 16px;
+            padding-bottom: 5px;
+            i{   /* commit 8 */
+                width: 25px;
+            }
         }
     }
 }
@@ -157,9 +178,12 @@ header{
             font-size: 18px;
             padding-right: 17px;
         }
-        p{
+        input{
+            width: 150px;
             font-weight: bold;
             font-size: 18px;
+            border:none;
+            background-color: inherit;
         }
     }
 }
@@ -209,6 +233,7 @@ nav{
         @include colum ;
         align-content: space-around;
         li{
+            @include align-center ;
             width: 85%;
             max-width: 360px;
             margin: auto;
@@ -226,11 +251,13 @@ nav{
                     color: $violet;
                 }
             }
-            & i:nth-child(1){
+            & .center_icon:nth-child(1){ /* commit 8*/
+                @include justify-content(center) ;
+                align-items: center;
                 color:#ffffff;
-                padding: 9px;
-                font-size: 12px;
-                margin-left: -2%;
+                width: 24px;
+                height: 24px;
+                margin-left: -12px;
                 border-radius: 50%;
                 background-color: $violet;
             }
@@ -263,15 +290,12 @@ section{
             background-color: #ffffff;
             box-shadow: 0px 10px 20px -14px #000000;
             .news{
-                @include  justify-content( flex-end );
-                width: 88%;
-                margin: auto;
-                margin-top: 13px;  
+                top: 15px ;
+                right: 15px ;
+                color: darken( $vert, 50%);
+                padding: 4px 8px;
                 position: absolute;
-                p{
-                    padding: 6px 9px;
-                    background-color: $vert;
-                }
+                background-color: $vert;
             }
             img{
                 width: 100%;
@@ -324,20 +348,5 @@ section{
 /*-------------footer-----------------------*/
 /*-------------footer-----------------------*/
 footer{
-    color: #ffffff; 
-    background-color: #383636;
-    div{
-        width: 90%;
-        margin: auto;
-        padding-top: 20px;
-        h1{
-            font-size: 17px;
-            padding-bottom: 15px;
-            font-family: 'Shrikhand', sans-serif;
-        }
-        h3{
-            font-size: 16px;
-            padding-bottom: 5px;
-        }
-    }
+@include footer ;
 }
