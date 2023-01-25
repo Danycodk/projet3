@@ -182,7 +182,7 @@ article button:hover {
 nav {
   padding-bottom: 50px;
 }
-nav h1 {
+nav h2 {
   width: 90%;
   margin: auto;
   padding-top: 40px;
@@ -236,7 +236,7 @@ section {
   padding-bottom: 50px;
   background-color: #F3F3F3;
 }
-section h1 {
+section h2 {
   width: 90%;
   margin: auto;
   padding-top: 50px;
@@ -325,7 +325,7 @@ footer div {
   margin: auto;
   padding-top: 20px;
 }
-footer div h1 {
+footer div h2 {
   font-size: 17px;
   padding-bottom: 15px;
   font-family: "Shrikhand", sans-serif;

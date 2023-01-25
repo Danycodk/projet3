@@ -102,11 +102,11 @@ header h1 {
 
 /*-------------article-----------------------*/
 /*-------------article-----------------------*/
-article {
+.article {
   position: relative;
   z-index: 1;
 }
-article figure img {
+.article figure img {
   width: 100%;
   height: 300px;
   object-fit: cover;
