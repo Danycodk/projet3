@@ -131,7 +131,8 @@ section .name_heart {
   padding-top: 20px;
   align-items: center;
 }
-section .name_heart h1 {
+section .name_heart p {
+  font-weight: bold;
   font-size: 22px;
   font-family: "Shrikhand", sans-serif;
 }
